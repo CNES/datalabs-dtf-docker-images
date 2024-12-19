@@ -21,7 +21,7 @@ def test_import(package_name):
 def test_start():
     print(os.environ)
     if os.environ.get("PANGEO_ENV") is not None:
-        assert os.environ["PANGEO_ENV"] == "pytorch-notebook"
+        assert os.environ["PANGEO_ENV"] == "dtf-notebook"
 
 
 def test_torch_uses_mkl():

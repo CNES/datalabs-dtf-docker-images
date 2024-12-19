@@ -15,11 +15,13 @@ DEBIAN_FRONTEND=noninteractive apt-get install --yes --quiet --no-install-recomm
     g++ \
     swig \
     findutils \
-    file
+    file \
+    python3-gdal
 
 
 # Pull and extract otb
 curl https://www.orfeo-toolbox.org/packages/archives/OTB/OTB-$OTB_RELEASE-Linux.tar.gz -o OTB-$OTB_RELEASE-Linux.tar.gz
-tar xvf OTB-$OTB_RELEASE-Linux.tar.gz --one-top-level="$HOME/otb"
+tar xvf OTB-$OTB_RELEASE-Linux.tar.gz --one-top-level="/opt/otb"
 rm OTB-$OTB_RELEASE-Linux.tar.gz
-
+chmod 755 /opt/otb
+chown -R $NB_USER:$NB_USER /opt/otb/
