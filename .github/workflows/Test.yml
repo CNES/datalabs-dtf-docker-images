@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        IMAGE: [base-notebook, pangeo-notebook, dtf-notebook]
+        IMAGE: [dtf-notebook]
     name: ${{ matrix.IMAGE }}
     runs-on: ubuntu-latest
     services:
